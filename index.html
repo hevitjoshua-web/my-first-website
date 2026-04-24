@@ -3,9 +3,6 @@
 <head>
     <title>Hevit Joshua | Portfolio</title>
 
-    <!-- Mobile responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
         body {
             margin: 0;
@@ -13,27 +10,6 @@
             background: #f5f7fa;
         }
 
-        /* NAVBAR */
-        nav {
-            background: #222;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #00d4ff;
-        }
-
-        /* HEADER */
         header {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -45,6 +21,11 @@
             width: 140px;
             border-radius: 50%;
             border: 4px solid white;
+            margin-top: 15px;
+        }
+
+        h1 {
+            margin: 10px 0;
         }
 
         section {
@@ -59,16 +40,6 @@
             margin: 20px 0;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
-            /* animation hidden */
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 0.6s;
-        }
-
-        .card.show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .btn {
@@ -85,80 +56,42 @@
             background: #5a67d8;
         }
 
-        /* PROJECT IMAGE */
-        .project-img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 20px;
             background: #222;
             color: white;
         }
-
-        /* MOBILE */
-        @media (max-width: 600px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<!-- HEADER -->
-<header id="home">
+<header>
     <h1>Hevit Joshua 👋</h1>
     <p>Student | Web Developer</p>
-    <img src="PASTE-LINK-HERE" alt="My Photo">
+    <img src="website.jpeg" alt="My Photo">
 </header>
 
-<!-- ABOUT -->
-<section id="about">
+<section>
     <div class="card">
         <h2>About Me</h2>
-        <p>I am learning web development and building modern websites. "Excellence in Every Click"</p>
+        <p>I am a student learning web development and building modern websites.</p>
     </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
+    <div class="card">
+        <h2>Skills</h2>
+        <p>HTML | CSS | Basic JavaScript</p>
+    </div>
+
     <div class="card">
         <h2>Projects</h2>
-        <p>My First Website</p>
-
-        <!-- Add your project image -->
-        <img src="website.jpeg" class="project-img">
+        <p>✔ My First Website (this project)</p>
     </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact">
     <div class="card">
         <h2>Contact</h2>
         <p>Email: joshuahevit@email.com</p>
-
-        <!-- Instagram -->
-        <a class="btn" href="https://instagram.com/hevit_joahua" target="_blank">
-            Instagram
-        </a>
-
-        <br><br>
-
         <a class="btn" href="mailto:joshuahevit@email.com">Contact Me</a>
     </div>
 </section>
@@ -166,21 +99,6 @@
 <footer>
     <p>© 2026 Hevit Joshua</p>
 </footer>
-
-<!-- SCROLL ANIMATION SCRIPT -->
-<script>
-    const cards = document.querySelectorAll('.card');
-
-    window.addEventListener('scroll', () => {
-        cards.forEach(card => {
-            const cardTop = card.getBoundingClientRect().top;
-
-            if(cardTop < window.innerHeight - 100){
-                card.classList.add('show');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
