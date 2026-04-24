@@ -1,97 +1,188 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Portfolio</title>
+    <title>Hevit Joshua | Portfolio</title>
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
             margin: 0;
-            font-family: Arial;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #222;
+            padding: 15px;
+            position: sticky;
+            top: 0;
             text-align: center;
         }
 
-        header {
-            background: #222;
+        nav a {
             color: white;
-            padding: 30px;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        h1 {
-            margin: 10px;
-            animation: fadeIn 2s;
+        nav a:hover {
+            color: #00d4ff;
         }
 
-        .container {
-            padding: 20px;
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
         }
 
-        img {
-            width: 150px;
+        header img {
+            width: 140px;
             border-radius: 50%;
-            margin-top: 10px;
             border: 4px solid white;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
         }
 
         .card {
             background: white;
-            margin: 20px auto;
             padding: 20px;
-            width: 80%;
+            margin: 20px 0;
             border-radius: 10px;
-            box-shadow: 0 0 15px gray;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+            /* animation hidden */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 0.6s;
         }
 
-        .card:hover {
-            transform: scale(1.05);
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        a {
-            text-decoration: none;
-            color: white;
-            background: #007BFF;
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
             padding: 10px 15px;
+            background: #667eea;
+            color: white;
             border-radius: 5px;
+            text-decoration: none;
         }
 
-        a:hover {
-            background: #0056b3;
+        .btn:hover {
+            background: #5a67d8;
         }
 
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
+        /* PROJECT IMAGE */
+        .project-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
-
 </head>
+
 <body>
 
-<header>
+<!-- NAVBAR -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
+<header id="home">
     <h1>Hevit Joshua 👋</h1>
-    <p>Student |  Web Developer</p>
+    <p>Student | Web Developer</p>
+    <img src="website.jpeg" alt="My Photo">
 </header>
 
-<div class="container">
-
-<img src="website.jpeg" alt="My Photo" style="width:150px; border-radius:50%; box-shadow:0 0 20px black;">
-    
+<!-- ABOUT -->
+<section id="about">
     <div class="card">
-        <h2>About US</h2>
-        <p>we are to creat your dream website . This is my first live website hosted online.
-          Build a website . 
-                      Build your future</p>
+        <h2>About Me</h2>
+        <p>I am learning web development and building modern websites. "Excellence in Every Click"</p>
     </div>
+</section>
 
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="card">
+        <h2>Projects</h2>
+        <p>My First Website</p>
+
+        <!-- Add your project image -->
+        <img src="website.jpeg" class="project-img">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
     <div class="card">
         <h2>Contact</h2>
         <p>Email: joshuahevit@email.com</p>
-        <a href="mailto:joshuahevit@email.com">Contact Me</a>
-    </div>
 
-</div>
+        <!-- Instagram -->
+        <a class="btn" href="https://instagram.com/hevit_joahua" target="_blank">
+            Instagram
+        </a>
+
+        <br><br>
+
+        <a class="btn" href="mailto:joshuahevit@email.com">Contact Me</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Hevit Joshua</p>
+</footer>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+    const cards = document.querySelectorAll('.card');
+
+    window.addEventListener('scroll', () => {
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if(cardTop < window.innerHeight - 100){
+                card.classList.add('show');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
